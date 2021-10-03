@@ -45,7 +45,7 @@ public class Solution24 {
                 return false;
             }
         }
-        return  true;
+        return true;
     }
     // print the output based on whether isAnagram is true or false
     public void output(boolean isAnagram, String word1, String word2){
