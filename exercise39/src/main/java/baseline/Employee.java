@@ -6,16 +6,22 @@ package baseline;
 
 public class Employee {
     private String firstName = "";
+    private String lastName = "";
     private String position = "";
     private String date = "";
-    Employee(String name, String job, String separation){
-        firstName = name;
+    Employee(String fName, String lName, String job, String separation){
+        firstName = fName;
+        lastName = lName;
         position = job;
         date = separation;
     }
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public String getPosition() {
