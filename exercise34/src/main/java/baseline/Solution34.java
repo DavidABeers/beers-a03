@@ -5,32 +5,49 @@
 
 package baseline;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Solution34 {
-    // create and fill list
-    private List giveEmployees(){
 
+    // create and fill list.
+    public ArrayList<String> giveEmployees(){
+        ArrayList<String> employees = new ArrayList<>();
+        employees.add(0, "John Smith");
+        employees.add(1, "Jackie Jackson");
+        employees.add(2, "Chris Jones");
+        employees.add(3, "Amanda Cullen");
+        employees.add(4, "Jeremy Goodwin");
+        return employees;
     }
 
     // print out the list elements
-    private void printList(List employees){
-
+    private void printList(ArrayList<String> employees){
+        System.out.printf("There are %d employees%n%n", employees.size());
+        for(String name:employees){
+            System.out.println(name);
+        }
     }
 
     // get name to remove
     private String getName(){
-        
+        Scanner in = new Scanner(System.in);
+        System.out.println("\nEnter an employee to remove:");
+        return in.nextLine();
     }
 
     // search list for element to remove
-    public List removeEmployee(List employees, String employee){
-
+    public void removeEmployee(ArrayList<String> employees, String employee){
+        for(int i = 0;i<employees.size();i++){
+            if(employees.get(i).equals(employee)){
+                employees.remove(i);
+            }
+        }
     }
 
     public static void main(String[] args) {
         Solution34 s = new Solution34();
-        List employees = s.giveEmployees();
+        ArrayList<String> employees = s.giveEmployees();
         s.printList(employees);
         String employee = s.getName();
         s.removeEmployee(employees, employee);
